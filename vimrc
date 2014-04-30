@@ -24,18 +24,19 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'command-t'
+Bundle 'taglist.vim'
 Bundle 'https://github.com/jcf/vim-latex'
 " scripts not on GitHub
 " git repos on your local machine (i.e. when working on your own plugin)
 " Bundle 'file:///home/gmarik/path/to/plugin'
 " ...
-Bundle 'https://github.com/klen/python-mode.git'
 
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/tpope/vim-fugitive.git'
 Bundle 'bling/vim-airline'
 Bundle 'https://github.com/rhysd/vim-clang-format.git'
+Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 
 " Bundle 'https://github.com/davidhalter/jedi-vim'
 filetype plugin indent on     " required
@@ -56,4 +57,12 @@ syntax on
  " NERDTree config
 map <F2> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore = ['.*\.o$','.*\.ko$','.*\.pyc$'] 
 set laststatus=2
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Show_One_File = 1  
+let Tlist_Use_Right_Window = 1 
+let Tlist_Exit_OnlyWindow = 1 
+set cindent
+set shiftwidth=2
+set expandtab
