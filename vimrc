@@ -16,7 +16,8 @@ Bundle 'gmarik/vundle'
 " scripts on GitHub repos
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-rails.git'
+" Bundle 'tpope/vim-rails.git'
+Bundle 'scrooloose/syntastic' 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -36,7 +37,6 @@ Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/tpope/vim-fugitive.git'
 Bundle 'bling/vim-airline'
 Bundle 'https://github.com/rhysd/vim-clang-format.git'
-Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 
 " Bundle 'https://github.com/davidhalter/jedi-vim'
 filetype plugin indent on     " required
@@ -66,3 +66,7 @@ let Tlist_Exit_OnlyWindow = 1
 set cindent
 set shiftwidth=2
 set expandtab
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
