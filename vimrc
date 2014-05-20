@@ -2,59 +2,55 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" alternatively, pass a path where Vundle should install bundles
-"let path = '~/some/path/here'
-"call vundle#rc(path)
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep bundle commands between here and filetype plugin indent on.
-" scripts on GitHub repos
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'tpope/vim-rails.git'
-Bundle 'scrooloose/syntastic' 
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+" Plugin 'tpope/vim-rails.git'
+Plugin 'scrooloose/syntastic' 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " scripts from http://vim-scripts.org/vim/scripts.html
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'command-t'
-Bundle 'taglist.vim'
-Bundle 'https://github.com/jcf/vim-latex'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'command-t'
+Plugin 'taglist.vim'
+Plugin 'https://github.com/jcf/vim-latex'
 " scripts not on GitHub
 " git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///home/gmarik/path/to/plugin'
+" Plugin 'file:///home/gmarik/path/to/plugin'
 " ...
 
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-Bundle 'https://github.com/scrooloose/nerdtree.git'
-Bundle 'https://github.com/tpope/vim-fugitive.git'
-Bundle 'bling/vim-airline'
-Bundle 'https://github.com/rhysd/vim-clang-format.git'
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'bling/vim-airline'
+Plugin 'https://github.com/rhysd/vim-clang-format.git'
 
-" Bundle 'https://github.com/davidhalter/jedi-vim'
-filetype plugin indent on     " required
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
-" Put your stuff after this line
+" Put your non-Plugin stuff after this line
+"
 syntax on
-
- " NERDTree config
+syntax enable
+colorscheme github 
 map <F2> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['.*\.o$','.*\.ko$','.*\.pyc$'] 
